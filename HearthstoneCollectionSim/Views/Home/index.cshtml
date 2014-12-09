@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="HearthstoneCollectionApp">
+<head>
+   <meta name="viewport" content="width=device-width"/>
+   <link type="text/css" rel="stylesheet" href="../../Content/css/bootstrap.css"/>
+   <link type="text/css" rel="stylesheet" href="../../Content/css/main.css"/>
+   <script type="text/javascript" src="~/Content/js/lib/angular.js"></script>
+   <script type="text/javascript" src="~/Content/js/src/application.js"></script>
+   <script type="text/javascript" src="~/Content/js/src/CardSearch/CardSearchController.js"></script>
+   <title></title>
+</head>
+<body>
+<div id="search_area" ng-controller="CardSearchController">
+   <div>
+      <input type="text" class="input-lg" ng-model="cardSearch"/>
+   </div>
+
+   <div class="table-responsive">
+      <table class="table table-hover header-fixed" >
+         <thead>
+         <tr id="results_table_header_row">
+            <th>
+               <p>Card Name</p>
+            </th>
+            <th>
+               <p>Normal Copies in Collection</p>
+               <button class="btn btn-default btn-block">Full Playset of All Cards</button>
+               <button class="btn btn-default btn-block">Clear All Cards</button>
+            </th>
+            <th>
+               <p>Gold Copies in Collection</p>
+               <button class="btn btn-default btn-block">Full Playset of All Cards</button>
+               <button class="btn btn-default btn-block">Clear All Cards</button>
+            </th>
+            <th>
+               <p>Normal Copies Desired</p>
+               <button class="btn btn-default btn-block">Full Playset of All Cards</button>
+               <button class="btn btn-default btn-block">Clear All Cards</button>
+            </th>
+            <th>
+               <p>Gold Copies Desired</p>
+               <button class="btn btn-default btn-block">Full Playset of All Cards</button>
+               <button class="btn btn-default btn-block">Clear All Cards</button>
+            </th>
+         </tr>
+         </thead>
+
+         @*to be replaced with data*@
+         <tbody id="results_table_body">
+         <tr ng-repeat="card in cards | 
+            filter:cardSearch">
+            <td>
+               <span class="card_name">{{card.name}}
+                  </span>
+            </td>
+            <td>
+               <input
+                  class="card_number_input"
+                  type="number"
+                  min="0"
+                  ng-init="card.normalCardsInCollection=0"
+                  ng-model="card.normalCardsInCollection"/>
+            </td>
+            <td>
+               <input
+                  class="card_number_input"
+                  type="number"
+                  min="0"
+                  ng-init="card.goldCardsInCollection=0"
+                  ng-model="card.goldCardsInCollection"/>
+            </td>
+            <td>
+               <input
+                  class="card_number_input"
+                  type="number"
+                  min="0"
+                  ng-init="card.normalCardsDesired=0"
+                  ng-model="card.normalCardsDesired"/>
+            </td>
+            <td>
+               <input
+                  class="card_number_input"
+                  type="number"
+                  min="0"
+                  ng-init="card.goldCardsDesired=0"
+                  ng-model="card.goldCardsDesired"/>
+            </td>
+         </tr>
+         </tbody>
+      </table>
+   </div class="table-responsive">
+</div>
+</body>
+</html>

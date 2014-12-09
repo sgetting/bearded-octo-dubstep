@@ -1,0 +1,1 @@
+﻿var HearthstoneCollectionApp = angular.module('HearthstoneCollectionApp', []);

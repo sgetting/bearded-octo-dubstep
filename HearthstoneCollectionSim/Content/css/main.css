@@ -1,0 +1,70 @@
+﻿body {
+
+}
+
+
+p {
+   vert-align: top;
+}
+
+#results_table_body {
+   overflow: auto;
+   display: block;
+   height: 400px;
+}
+
+#results_table_header_row {
+   display: block;
+   position: relative;
+}
+
+.header-fixed {
+    width: 100% 
+}
+
+.header-fixed > thead,
+.header-fixed > tbody,
+.header-fixed > thead > tr,
+.header-fixed > tbody > tr,
+.header-fixed > thead > tr > th,
+.header-fixed > tbody > tr > td {
+    display: block;
+}
+
+.header-fixed > tbody > tr:after,
+.header-fixed > thead > tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.header-fixed > tbody {
+    overflow-y: auto;
+    height: 150px;
+}
+
+.header-fixed > tbody > tr > td,
+.header-fixed > thead > tr > th {
+    width: 20%;
+    float: left;
+}
+
+#search_area {
+   -moz-min-width: 400px;
+   -ms-min-width: 400px;
+   -o-min-width: 400px;
+   -webkit-min-width: 400px;
+   min-width: 400px;
+   width: 80%;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.card_name {
+   color: dodgerblue;
+}
+
+.card_number_input {
+   width: 45px;
+}
