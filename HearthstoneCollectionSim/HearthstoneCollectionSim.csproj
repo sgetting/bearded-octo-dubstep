@@ -189,6 +189,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\AllSets.cs" />
     <Compile Include="Models\Card.cs" />
     <Compile Include="Models\CardSet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -204,6 +205,7 @@
     <Content Include="Content\js\lib\bootstrap-3.3.1-dist\dist\js\bootstrap.js" />
     <Content Include="Content\js\lib\bootstrap-3.3.1-dist\dist\js\bootstrap.min.js" />
     <Content Include="Content\js\lib\bootstrap-3.3.1-dist\dist\js\npm.js" />
+    <Content Include="Content\js\lib\ui-bootstrap-tpls-0.12.0.min.js" />
     <Content Include="Content\js\src\application.js" />
     <Content Include="Content\js\src\CardSearch\CardSearchController.js" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -267,7 +269,9 @@
     <Content Include="Content\js\lib\bootstrap-3.3.1-dist\dist\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\js\lib\bootstrap-3.3.1-dist\dist\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\js\lib\bootstrap-3.3.1-dist\dist\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\AllSets.json" />
+    <Content Include="Content\AllSets.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />

@@ -22,6 +22,11 @@ p {
     width: 100% 
 }
 
+.panel-borderless {
+   border-right: 0px;
+   border-left: 0px;
+}
+
 .header-fixed > thead,
 .header-fixed > tbody,
 .header-fixed > thead > tr,
