@@ -21,14 +21,14 @@ HearthstoneCollectionApp.filter("cardSearchFilter", function() {
             if (card.playerClass === playerClassName
                && card.collectible === true
                && (
-               // search string matches any of these fields
+                  // search string matches any of these fields
                   card.name.toLowerCase().search(searchString.toLowerCase()) > -1
                      || card.rarity.toLowerCase() === searchString.toLowerCase()
                      || (card.race && card.race.toLowerCase() === searchString.toLowerCase())
                      // TODO make a set selector
                      //|| (card.setName && card.setName.toLowerCase().search(searchString.toLowerCase()) > -1)
                      || card.type.toLowerCase() === searchString.toLowerCase()
-                     || (card.text && card.text.toLowerCase().search(searchString.toLowerCase()) > -1 )
+                     || (card.text && card.text.toLowerCase().search(searchString.toLowerCase()) > -1)
                )) {
                filtered.push(card);
             }
@@ -39,26 +39,24 @@ HearthstoneCollectionApp.filter("cardSearchFilter", function() {
 );
 
 HearthstoneCollectionApp.controller("CardSearchController", [
-   "$scope", "$dataService", function($scope, $dataService) {
+   "$scope","$filter", "$dataService", function($scope, $filter, $dataService) {
       $dataService.getData(function(dataResponse) {
          $scope.cardFile = dataResponse;
          $scope.cardsFromFile = angular.fromJson($scope.cardFile);
       });
 
-      //// Return a filter function tuned to each 
-      //$scope.filterCards = function(playerClassName, setName, searchString) {
-      //   return function(card, index) {
-      //      return card.playerClass === playerClassName
-      //         && card.setName === setName
-      //         && card.collectible === true
-      //         && (
-      //            // search string present in any of these fields
-      //            card.name.search(searchString) > -1
-      //               || card.rarity.search(searchString) > -1
-      //               || card.race.search(searchString) > -1
-      //               || card.type.search(searchString)
-      //         );
-      //   };
-      //};
+      $scope.playerClassNames = [
+         "Druid",
+         "Hunter",
+         "Mage",
+         "Paladin",
+         "Priest",
+         "Rogue",
+         "Shaman",
+         "Warlock",
+         "Warrior",
+         "Neutral"
+      ];
+
    }
 ]);

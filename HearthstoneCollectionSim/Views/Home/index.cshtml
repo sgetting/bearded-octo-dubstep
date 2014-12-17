@@ -15,28 +15,15 @@
    <div>
       <input type="text" width="100%" class="input-sm center-block" ng-model="cardSearch"/>
    </div>
-   <h4>Classic Set</h4>
 
-   <div class="list-group">
+   <div class="list-group" ng-repeat="class in playerClassNames">
       <a class="list-group-item list-group-item-heading">
-         Paladin
+         {{class}}
       </a>
-      <p class="list-group-item" ng-repeat="card in cardsFromFile | cardSearchFilter:cardSearch:'Paladin'">
+      <p class="list-group-item" ng-repeat="card in cardsFromFile | cardSearchFilter:cardSearch:class | orderBy:['cost', '-type', 'name']">
          <span class="card_name">{{card.name}}
          </span>
       </p>
-
-   </div>
-
-   <div class="list-group">
-      <a class="list-group-item list-group-item-heading">
-         Neutral
-      </a>
-      <p class="list-group-item" ng-repeat="card in cardsFromFile | cardSearchFilter:cardSearch:'Neutral'">
-         <span class="card_name">{{card.name}}
-         </span>
-      </p>
-
    </div>
 
 
