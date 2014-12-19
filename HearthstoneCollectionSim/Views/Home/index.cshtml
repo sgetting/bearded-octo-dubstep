@@ -8,25 +8,42 @@
    <script type="text/javascript" src="~/Content/js/lib/angular.js"></script>
    <script type="text/javascript" src="~/Content/js/src/application.js"></script>
    <script type="text/javascript" src="~/Content/js/src/CardSearch/CardSearchController.js"></script>
+   <script type="text/javascript" src="~/Content/js/lib/ui-bootstrap-tpls-0.12.0.min.js"></script>
    <title></title>
 </head>
+
 <body>
 <div id="search_area" ng-controller="CardSearchController">
    <div>
-      <input type="text" width="100%" class="input-sm center-block" ng-model="cardSearch"/>
+      <input id="search-bar" type="text" class="input-sm center-block" ng-model="cardSearch"/>
    </div>
 
-   <div class="list-group" ng-repeat="class in playerClassNames">
-      <a class="list-group-item list-group-item-heading">
-         {{class}}
-      </a>
-      <p class="list-group-item" ng-repeat="card in cardsFromFile | cardSearchFilter:cardSearch:class | orderBy:['cost', '-type', 'name']">
-         <span class="card_name">{{card.name}}
-         </span>
-      </p>
+   <div id="search-results" class="container">
+
+      <accordion close-others="false">
+         <accordion-group
+            heading="{{class}} ({{results.length}})"
+            is-open="true"
+            is-disabled="results.length === 0"
+            class="card-list-container" 
+            ng-repeat="class in playerClassNames">
+            <div class="list-group card-list">
+               <p class="list-group-item" ng-repeat=
+                  "card in (results = (cardsFromFile 
+                  | cardSearchFilter:cardSearch:class 
+                  | orderBy:['cost', '-type', 'name'])) 
+                  track by card.id ">
+                  <span class="card_name">
+                     {{card.name}}
+                  </span>
+               </p>
+               <p class="list-group-item list-group-item-info">
+                  {{results.length}}
+               </p>
+            </div>
+         </accordion-group>
+      </accordion>
    </div>
-
-
 </div>
 </body>
 </html>

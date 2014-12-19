@@ -7,52 +7,8 @@ p {
    vert-align: top;
 }
 
-#results_table_body {
-   overflow: auto;
-   display: block;
-   height: 400px;
-}
-
-#results_table_header_row {
-   display: block;
-   position: relative;
-}
-
-.header-fixed {
-    width: 100% 
-}
-
-.panel-borderless {
-   border-right: 0px;
-   border-left: 0px;
-}
-
-.header-fixed > thead,
-.header-fixed > tbody,
-.header-fixed > thead > tr,
-.header-fixed > tbody > tr,
-.header-fixed > thead > tr > th,
-.header-fixed > tbody > tr > td {
-    display: block;
-}
-
-.header-fixed > tbody > tr:after,
-.header-fixed > thead > tr:after {
-    content: ' ';
-    display: block;
-    visibility: hidden;
-    clear: both;
-}
-
-.header-fixed > tbody {
-    overflow-y: auto;
-    height: 150px;
-}
-
-.header-fixed > tbody > tr > td,
-.header-fixed > thead > tr > th {
-    width: 20%;
-    float: left;
+#search-bar {
+   width: auto;
 }
 
 #search_area {
@@ -64,6 +20,27 @@ p {
    width: 80%;
    margin-left: auto;
    margin-right: auto;
+}
+
+#search-results {
+   height: 600px;
+   overflow-y: scroll;
+}
+
+accordion .panel-body {
+   padding: 0;
+}
+
+.card-list > p {
+   border-left: 0;
+   border-right: 0;
+   border-top-left-radius: 0 !important;
+   border-top-right-radius: 0 !important;
+}
+
+.card-list {
+   margin-bottom: 0;
+   border-bottom: 0;
 }
 
 .card_name {

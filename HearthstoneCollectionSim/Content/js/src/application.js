@@ -1,1 +1,1 @@
-﻿var HearthstoneCollectionApp = angular.module('HearthstoneCollectionApp', []);
+﻿var HearthstoneCollectionApp = angular.module("HearthstoneCollectionApp", ["ui.bootstrap"]);
